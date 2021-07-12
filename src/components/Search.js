@@ -1,5 +1,12 @@
-function Search ({name, image, currentPrice, symbol}){
-    
+import {useState} from "react";
+
+function Search ({sortmyCryptoFeed, sortBy, name, image, currentPrice, symbol}){
+      //update search usestate so we can filter
+  const [search, setSearch] = useState('')
+  
+  const handleChange = (e) => {
+    setSearch(e.target.value)
+  }
 
     const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -7,6 +14,7 @@ function Search ({name, image, currentPrice, symbol}){
       });
 
 return (
+    
     <>
     <div>
         <img src={image} alt='crypto'/>
