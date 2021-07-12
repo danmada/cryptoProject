@@ -15,6 +15,7 @@ function App() {
     .then(cryptoData => setMyCryptoFeed(cryptoData))
   }, [])
 
+   console.log(myCryptoFeed)
 const handleChange = (e) => {
   setSearch(e.target.value)
 }
@@ -38,6 +39,8 @@ return (
           key = {coin.id}
           name = {coin.name}
           image = {coin.image}
+          symbol = {coin.symbol}
+          currentPrice = {coin.current_price}
           />
        )
        })
