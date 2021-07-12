@@ -1,18 +1,21 @@
-function Search ({name, image, currentPrice, symbol}){
-    
+import React from "react";
+import Card from "./Card";
 
-    const formatter = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-      });
+function Search ({handleChange, myCryptoFeed}){
+
+
+    
 
 return (
     <>
     <div>
-        <img src={image} alt='crypto'/>
-        <h1>{name}</h1>
-        <h1>Symbol: {symbol}</h1>
-        <h1>Price: {formatter.format(currentPrice)}</h1>
+    <form>
+        <input onChange = {handleChange}
+        type="text" placeholder="Search Crypto"/>
+    </form> 
+        <div>
+            
+        </div>
     </div>
     </>
 )
