@@ -1,14 +1,11 @@
 import {useEffect, useState} from "react";
-import Search from "./Search"
 import CardContainer from "./CardContainer"
 import Portfolio from "./Portfolio"
 
 function MainPage() {
   //holds api data
-  const [ coins, setCoins ] = useState([])
+  const [coins, setCoins ] = useState([])
   const [search, setSearch] = useState('')
-
-  const [ sortBy, setSortBy ] = useState('')
 
   // Fetch Crypto Data 
   useEffect(()=> {
@@ -25,55 +22,14 @@ function MainPage() {
   const searchFilterCrypto = coins.filter(coin => 
     coin.name.toLowerCase().includes(search.toLowerCase())
 ); 
-  useEffect(() => {
-    if(sortBy === 'Alphabetically'){
-      const sortedCoins = sortByName()
-      setCoins(sortedCoins)
-    }else{
-      const sortedCoins = sortByPrice()
-      setCoins(sortedCoins)
-    }
-  }, [sortBy])
 
 
-
-  const sortCoins = (e) => {
-    setSortBy(e.target.value)
-  }
-
-  // const filterCoins = (e) => {
-  //   setFilterBy(e.target.value)
-  // }
-
-  function sortByName()  {
-    return [...coins].sort(function(a, b) {
-      let nameA = a.name.toUpperCase(); // ignore upper and lowercase
-      let nameB = b.name.toUpperCase(); // ignore upper and lowercase
-      if (nameA < nameB) {
-        return -1;
-      }
-      if (nameA > nameB) {
-        return 1;
-      }
-
-      // names must be equal
-      return 0;
-    });
-  }
-
-  function sortByPrice () {
-    return [...coins].sort(function (a, b) {
-      return a.current_price_ - b.current_price;
-    });
-  }
-
-//buy sell coin functions for portfolio aspects?
   return (
     <div>
        <form>
-        <input onChange = {handleChange}
-        type="text" placeholder="Search Crypto"/>
-    </form>
+          <input onChange = {handleChange}
+          type="text" placeholder="Search Crypto"/>
+       </form>
        {searchFilterCrypto.map(coin => {
          return (
           <CardContainer
@@ -86,7 +42,6 @@ function MainPage() {
        )
        })
        }
-      <Search sortCoins={sortCoins} coins = {coins} sortBy={sortBy}/>
 
       <CardContainer coins={coins}  />
 
