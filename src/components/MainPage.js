@@ -1,11 +1,15 @@
 import {useEffect, useState} from "react";
 import CardContainer from "./CardContainer"
 import Portfolio from "./Portfolio"
+import SearchChange from "./SearchChange"
 
 function MainPage() {
   //holds api data
   const [coins, setCoins ] = useState([])
+  
   const [search, setSearch] = useState('')
+
+  const [sortBy, setSortBy]= useState('')
 
   // Fetch Crypto Data 
   useEffect(()=> {
@@ -15,6 +19,52 @@ function MainPage() {
       setCoins(cryptoData)
     )
   }, [])
+
+  useEffect(() => {
+    if(sortBy === 'Ascending'){
+      const sortedCoins = sortByName()
+      setCoins(sortedCoins)
+    }else{
+      const sortedCoins = sortByDescending()
+      setCoins(sortedCoins)
+    }
+  }, [sortBy])
+  
+  const sortCoins = (e) => {
+    setSortBy(e.target.value)
+  }
+
+  const sortByName = () => {
+    return [...coins].sort(function(a, b) {
+      let cryptoOne = a.name.toUpperCase(); // ignore upper and lowercase
+      let cryptoTwo = b.name.toUpperCase(); // ignore upper and lowercase
+      if (cryptoOne < cryptoTwo) {
+        return -1;
+      }
+      if (cryptoOne > cryptoTwo) {
+        return 1;
+      }
+
+      // names must be equal
+      return 0;
+    });
+  }
+  const sortByDescending = () => {
+    return [...coins].sort(function(a, b) {
+      let cryptoOne = a.name.toUpperCase(); // ignore upper and lowercase
+      let cryptoTwo = b.name.toUpperCase(); // ignore upper and lowercase
+      if (cryptoOne > cryptoTwo) {
+        return -1;
+      }
+      if (cryptoOne < cryptoTwo) {
+        return 1;
+      }
+
+      // names must be equal
+      return 0;
+    });
+  }
+
   const handleChange = (e) => {
     setSearch(e.target.value)
   }
@@ -30,6 +80,8 @@ function MainPage() {
           <input onChange = {handleChange}
           type="text" placeholder="Search Crypto"/>
        </form>
+       <SearchChange sortCoins ={sortCoins} sortBy={sortBy}/>
+
        {searchFilterCrypto.map(coin => {
          return (
           <CardContainer

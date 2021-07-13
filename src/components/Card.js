@@ -11,6 +11,7 @@ function Card({name , image, symbol, price}) {
         <h1>{name}</h1>
         <h1>Symbol: {symbol}</h1>
         <h1>Price: {formatter.format(price)}</h1>
+        <button>Add To Portfolio</button>
         
     </div>
     )
