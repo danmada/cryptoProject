@@ -6,7 +6,7 @@ function Card({myCrypto, handleClick}) {
       });
       
     return (
-    <div onClick={() => handleClick(myCrypto)}>
+    <div className="coin-card" onClick={() => handleClick(myCrypto)}>
         <img src={myCrypto.image} alt='crypto'/>
         <h1>{myCrypto.name}</h1>
         <h1>Symbol: {myCrypto.symbol}</h1>
