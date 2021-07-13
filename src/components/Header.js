@@ -1,8 +1,14 @@
+import React from "react";
+import { NavLink } from "react-router-dom"
+
 function Header() {
     return (
-    <div>
-        <h1>Working Crypto Title</h1>
-        <button>Portfolio</button>
+    <div className="header">
+        <h1>CryptoKeeper</h1>
+        <nav>
+        <NavLink exact to="/">Home</NavLink>
+        <NavLink to="/portfolio">Portfolio</NavLink>
+        </nav>
     </div>
     )
 }
