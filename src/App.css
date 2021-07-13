@@ -26,11 +26,14 @@ body {
 }
 
 .coin-card img {
-    height: 200px;
-    width: 200px;
+    height: 125px;
+    width: 125px;
     float: left;
-    padding-right: 3%;
-    
+    padding-right: 2%;
+}
+
+span {
+    padding-right: 5%;
 }
 
  a.active {

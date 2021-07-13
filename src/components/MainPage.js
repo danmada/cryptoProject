@@ -24,93 +24,57 @@ function MainPage() {
   }, [])
 
   useEffect(() => {
-    if(sortBy === 'Alphabetically'){
+    if(sortBy === 'Ascending'){
       const sortedCoins = sortByName()
       setCoins(sortedCoins)
     }else{
-      const sortedCoins = sortByPrice()
+      const sortedCoins = sortByDescending()
       setCoins(sortedCoins)
     }
   }, [sortBy])
 
 
-
-  const sortCoins = (e) => {
-    setSortBy(e.target.value)
-  }
-
-  // const filterCoins = (e) => {
-  //   setFilterBy(e.target.value)
-  // }
-
   function sortByName()  {
     return [...coins].sort(function(a, b) {
-      let nameA = a.name.toUpperCase(); // ignore upper and lowercase
-      let nameB = b.name.toUpperCase(); // ignore upper and lowercase
-      if (nameA < nameB) {
+      let cryptoOne = a.name.toUpperCase(); // ignore upper and lowercase
+      let cryptoTwo = b.name.toUpperCase(); // ignore upper and lowercase
+      if (cryptoOne < cryptoTwo) {
         return -1;
       }
-      if (nameA > nameB) {
+      if (cryptoOne > cryptoTwo) {
         return 1;
       }
-
       // names must be equal
       return 0;
     });
-  }
+  }  
 
-  function sortByPrice () {
-    return [...coins].sort(function (a, b) {
-      return a.current_price_ - b.current_price;
+  function sortByDescending()  {
+    return [...coins].sort(function(a, b) {
+      let cryptoOne = a.name.toUpperCase(); // ignore upper and lowercase
+      let cryptoTwo = b.name.toUpperCase(); // ignore upper and lowercase
+      if (cryptoOne > cryptoTwo) {
+        return -1;
+      }
+      if (cryptoOne < cryptoTwo) {
+        return 1;
+      }
+      // names must be equal
+      return 0;
     });
+  } 
+
+  const sortCoins = (e) => {
+      setSortBy(e.target.value)
   }
+  
 
   function addToPortfolio(coins) {
     if(!myPortfolio.includes(coins)) {
    const updatePortfolio = [...myPortfolio, coins]
    setMyPortfolio(updatePortfolio)
-
   }}
 
-  useEffect(() => {
-    if(sortBy === 'Alphabetically'){
-      const sortedCoins = sortByName()
-      setCoins(sortedCoins)
-    }else{
-      const sortedCoins = sortByPrice()
-      setCoins(sortedCoins)
-    }
-  }, [sortBy])
-
-
-
- 
-
-//buy sell coin functions for portfolio aspects?
-      
-
-
-  function sortByName()  {
-    return [...coins].sort(function(a, b) {
-      let nameA = a.name.toUpperCase(); // ignore upper and lowercase
-      let nameB = b.name.toUpperCase(); // ignore upper and lowercase
-      if (nameA < nameB) {
-        return -1;
-      }
-      if (nameA > nameB) {
-        return 1;
-      }
-
-      // names must be equal
-      return 0;
-    });
-  }
-
-  function sortByPrice () {
-    return [...coins].sort(function (a, b) {
-      return a.current_price_ - b.current_price;
-    });
-  }
 
 //buy sell coin functions for portfolio aspects?
   return (
@@ -121,11 +85,11 @@ function MainPage() {
           }>
           </Route>
           <Route path="/" component= {
-          () => <CardContainer coins={coins} handleClick={addToPortfolio}/>
+          () => <CardContainer coins={coins} handleClick={addToPortfolio} sortCoins={sortCoins} sortBy={sortBy}/>
           }>
           </Route>
       </Switch>
-      <Search sortCoins={sortCoins} coins = {coins} sortBy={sortBy}/>
+      {/* <Search sortCoins={sortCoins} coins = {coins} sortBy={sortBy}/> */}
     </div>
      ) 
 }
