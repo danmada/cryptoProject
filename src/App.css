@@ -1,5 +1,5 @@
 body {
-    
+    font-family: Arial, Helvetica, sans-serif;
     margin-top: 0%;
     background-color: rgb(49, 49, 49);
 }
@@ -48,4 +48,35 @@ span {
     margin-right: 5%;
     margin-left: 5%;
   }
+
+#details-header {
+    position: fixed;
+    width: 20%;
+    color: rgb(170, 170, 170);
+    padding-top: 20%;
+    padding-left: 3%;
+    font-size: 20pt;
+    float: left;
+    
+}
+
+#details-header img {
+    width: 150px;
+    height: 150px;
+}
+
+small {
+    
+    font-size: 11pt;
+    padding-left: 5%;
+}
+
+div#coin-stats {
+    color: rgb(170, 170, 170);
+    margin-top: 0%;
+    font-size: 18pt;
+    float: right;
+    padding-top: 15%;
+    padding-right: 40%;
+}
 

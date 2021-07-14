@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import Search from "./Search"
 import CardContainer from "./CardContainer"
 import Portfolio from "./Portfolio"
+import CardDetail from "./DetailsContainer";
 
 function MainPage() {
   //holds api data
@@ -82,6 +83,10 @@ function MainPage() {
       <Switch>
           <Route path="/portfolio" component= {
             () => <Portfolio  coins = {coins} myPortfolio={myPortfolio}/>
+          }>
+          </Route>
+          <Route path="/:id" component= {
+            () => <CardDetail coins={coins}/>
           }>
           </Route>
           <Route path="/" component= {
