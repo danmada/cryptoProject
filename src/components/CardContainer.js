@@ -15,7 +15,7 @@ function CardContainer({coins, handleClick, sortCoins, sortBy}) {
 
     return (
     <div className="coin-container">
-        <h1>Crypto Container</h1>
+        <h1 className="crypto-container">Crypto Feed</h1>
         <div>
             <form>
                 <input onChange = {handleChange}

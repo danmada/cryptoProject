@@ -4,7 +4,7 @@ function Portfolio({myPortfolio}) {
 
     return (
     <div className="coin-portfolio">
-        <h1>My Portfolio</h1>
+        <h1 className ="crypto-container">My Portfolio</h1>
         <div>
             {myPortfolio.map(myCrypto => {
                 return <Card 
