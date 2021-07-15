@@ -1,6 +1,12 @@
 import Card from "./Card"
+import { useParams } from "react-router-dom"
+
 
 function Portfolio({myPortfolio, deleteFromPort}) {
+
+    const paramsPort = useParams()
+
+    console.log(paramsPort)
 
     return (
     <div className="coin-portfolio">

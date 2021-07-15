@@ -91,11 +91,11 @@ function MainPage() {
         <Route path="/newsfeed">
           <NewsFeed />
         </Route>
-          <Route path="/portfolio" component= {
+          <Route exact path="/portfolio" component= {
             () => <Portfolio  coins = {coins} myPortfolio={myPortfolio}/>
           }>
           </Route>
-          <Route path="/:id" component= {
+          <Route exact path="/:id" component= {
             () => <DetailsContainer coins={coins} handleClick={addToPortfolio}/>
           }>
           </Route>

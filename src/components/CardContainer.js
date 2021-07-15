@@ -1,29 +1,23 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import Card from "./Card"
-
 function CardContainer({coins, handleClick, sortCoins, sortBy}) {
     const [ search, setSearch ] = useState('')
-   
-
     const handleChange = (e) => {
         setSearch(e.target.value)
     }
-    
     const searchFilterCrypto = coins.filter(coin => 
         coin.name.toLowerCase().includes(search.toLowerCase())
     ); 
-
     return (
     <div className="coin-container">
-        <aside id="test">hello</aside>
-        <div>
-            <form>
+            <div className ="crypto-container">
+            <form >
                 <input onChange = {handleChange}
-                type="text" placeholder="Search Crypto"/>
+                 id="searchbox" type="text" placeholder="Search Crypto"/>
             </form>
-            <div>
-            <strong>Sort Name By:</strong>
-            <label>
+            </div>
+            <strong style = {{color: 'white'}}>Sort Name By:</strong>
+            <label style = {{color: 'white'}}>
                 <input
                 type="radio"
                 value="Ascending"
@@ -31,8 +25,9 @@ function CardContainer({coins, handleClick, sortCoins, sortBy}) {
                 checked={sortBy === 'Ascending'}
                 onChange={sortCoins}
                 />
+                🠕
             </label>
-            <label>
+            <label style = {{color: 'white'}}>
                 <input
                 type="radio"
                 value="Descending"
@@ -40,9 +35,8 @@ function CardContainer({coins, handleClick, sortCoins, sortBy}) {
                 checked={sortBy === 'Descending'}
                 onChange={sortCoins}
                 />
+                🠗
             </label>
-            
-            </div>
             <div>
             <h1 style={{color: "white"}}>Cryptos</h1>
                 {searchFilterCrypto.map(coin => {
@@ -60,13 +54,8 @@ function CardContainer({coins, handleClick, sortCoins, sortBy}) {
                 )
                 })
                 }
-            </div>
-        </div>
-        
+            </div>  
     </div>
     )
-
-   
 }
-
 export default CardContainer

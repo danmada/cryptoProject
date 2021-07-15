@@ -3,10 +3,29 @@ body {
     margin-top: 0%;
     background-color: rgb(49, 49, 49);
 }
-.crypto-container{
-    color: white
+#searchbox{
+    height: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: large;
 }
-
+.crypto-container{
+    color: white;
+    text-align: center;
+}
+.text-sort {
+    color: white;
+}
+#newsfeed-header{
+padding-top: 10%;
+text-align: center;
+}
+#portfolio-render{
+    background-color: springgreen;
+}
+#portfolio-button {
+    padding: 8px;
+}
 .header {
     text-align: center;
     background-color: rgb(57, 57, 104);
@@ -15,52 +34,49 @@ body {
     position: fixed;
     margin-top: 0%;
 }
-
-.header h1 {
-    font-size: 30pt;
-}
-
-
 .coin-container {
-    padding-top: 15%;
+    padding-top: 10%;
+    margin: auto;
+    width: 40%;
+    text-align: center;
 }
 .coin-portfolio {
-    padding-top: 15%;
+    padding-top: 10%;
 }
-
+.search-container{
+    margin: auto;
+    width: 40%;
+}
 .coin-card {
     width: 50%;
     color: rgb(170, 170, 170);
     padding-bottom: 5%;
     padding-top: 5%;
     padding-left: 10%;
-    border-top-style: solid;
+    padding-right: 10%;
+    margin-bottom: 5%;
+    margin: auto;
+    border: solid;
 }
-
 .coin-card img {
     height: 125px;
     width: 125px;
-    float: left;
     padding-right: 2%;
 }
-
 span {
     padding-right: 5%;
 }
-
  a.active {
     background-color: black;
     color: rgb(170, 170, 170);
     margin-right: 5%;
     margin-left: 5%;
   }
-
   a {
     color: rgb(170, 170, 170);
     margin-right: 5%;
     margin-left: 5%;
   }
-
 #details-header {
     position: fixed;
     width: 20%;
@@ -69,20 +85,16 @@ span {
     padding-left: 3%;
     font-size: 20pt;
     float: left;
-    
 }
-
 #details-header img {
     width: 150px;
     height: 150px;
 }
-
 small {
     font-size: 11pt;
     padding-left: 1%;
     padding-right: 1%;
 }
-
 div#coin-stats {
     color: rgb(170, 170, 170);
     margin-top: 0%;
@@ -91,4 +103,3 @@ div#coin-stats {
     padding-top: 15%;
     padding-right: 30%;
 }
-
