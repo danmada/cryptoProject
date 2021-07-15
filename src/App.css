@@ -6,6 +6,7 @@ body {
 .crypto-container{
     color: white
 }
+
 .header {
     text-align: center;
     background-color: rgb(57, 57, 104);
@@ -15,16 +16,25 @@ body {
     margin-top: 0%;
 }
 
+.header h1 {
+    font-size: 30pt;
+}
+
+
 .coin-container {
-    padding-top: 10%;
+    padding-top: 15%;
 }
 .coin-portfolio {
-    padding-top: 10%;
+    padding-top: 15%;
 }
 
 .coin-card {
+    width: 50%;
     color: rgb(170, 170, 170);
-    padding-bottom: 10%;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    padding-left: 10%;
+    border-top-style: solid;
 }
 
 .coin-card img {
@@ -39,7 +49,7 @@ span {
 }
 
  a.active {
-    
+    background-color: black;
     color: rgb(170, 170, 170);
     margin-right: 5%;
     margin-left: 5%;
@@ -68,9 +78,9 @@ span {
 }
 
 small {
-    
     font-size: 11pt;
-    padding-left: 5%;
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
 div#coin-stats {
@@ -79,6 +89,10 @@ div#coin-stats {
     font-size: 18pt;
     float: right;
     padding-top: 15%;
-    padding-right: 40%;
+    padding-right: 30%;
 }
 
+#test {
+    
+    float: right;
+}

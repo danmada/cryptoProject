@@ -1,8 +1,8 @@
 
 
-function DetailsCard({details}) {
+function DetailsCard({details, coins, handleClick}) {
 
-console.log(details)
+
 
 const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -16,7 +16,7 @@ return (
         <h1>{details.name}
         <small>{details.symbol}</small>
         </h1>
-        
+        <button onClick={() => handleClick(details)}>Add to Portfolio</button>
     </aside>
     <div id="coin-stats">
         <h3>{details.name} Stats</h3>

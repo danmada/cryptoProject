@@ -1,6 +1,6 @@
 import Card from "./Card"
 
-function Portfolio({myPortfolio}) {
+function Portfolio({myPortfolio, deleteFromPort}) {
 
     return (
     <div className="coin-portfolio">
@@ -13,6 +13,8 @@ function Portfolio({myPortfolio}) {
                     image = {myCrypto.image}
                     symbol = {myCrypto.symbol}
                     price = {myCrypto.current_price}
+                    id = {myCrypto.id}
+                    deleteFromPort={deleteFromPort}
                 
                 />} 
                 ) }

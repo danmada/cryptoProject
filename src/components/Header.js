@@ -8,6 +8,7 @@ function Header() {
         <nav>
         <NavLink exact to="/">Home</NavLink>
         <NavLink to="/portfolio">Portfolio</NavLink>
+        <NavLink to="/newsfeed">News Feed</NavLink>
         </nav>
     </div>
     )

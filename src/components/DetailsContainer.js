@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom"
 import DetailsCard from "./DetailsCard";
 
 
-function DetailsContainer () {
+function DetailsContainer ({handleClick}) {
     const [coinDetail, setCoinDetail] = useState([])
     const params = useParams()
 
@@ -20,8 +20,10 @@ function DetailsContainer () {
 
     return (
         <div>
+        <div>
             {coinDetail.map(details =>
-                <DetailsCard key={details.id} details={details}/>)}
+                <DetailsCard key={details.id} details={details} handleClick={handleClick}/>)}
+        </div>
         </div>
     )
 

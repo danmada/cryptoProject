@@ -15,7 +15,7 @@ function CardContainer({coins, handleClick, sortCoins, sortBy}) {
 
     return (
     <div className="coin-container">
-        
+        <aside id="test">hello</aside>
         <div>
             <form>
                 <input onChange = {handleChange}
@@ -44,7 +44,7 @@ function CardContainer({coins, handleClick, sortCoins, sortBy}) {
             
             </div>
             <div>
-            <h1>Crypto Container</h1>
+            <h1 style={{color: "white"}}>Cryptos</h1>
                 {searchFilterCrypto.map(coin => {
                     return (
                     <Card

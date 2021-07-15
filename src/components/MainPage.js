@@ -3,7 +3,8 @@ import {useEffect, useState} from "react";
 import Search from "./Search"
 import CardContainer from "./CardContainer"
 import Portfolio from "./Portfolio"
-import CardDetail from "./DetailsContainer";
+import DetailsContainer from "./DetailsContainer";
+import NewsFeed from "./NewsFeed";
 
 function MainPage() {
   //holds api data
@@ -70,23 +71,32 @@ function MainPage() {
   }
   
 
-  function addToPortfolio(coins) {
+  function addToPortfolio(coins, details) {
     if(!myPortfolio.includes(coins)) {
    const updatePortfolio = [...myPortfolio, coins]
-   setMyPortfolio(updatePortfolio)
+   const updatePortfolioDeets = [...myPortfolio, details]
+   setMyPortfolio(updatePortfolio, updatePortfolioDeets)
   }}
+
+//   function deleteFromPort() {
+//     const updatedPort = myPortfolio.filter(deleted => deleted.id !== id)
+//     setMyPortfolio(updatedPort)
+//  } 
 
 
 //buy sell coin functions for portfolio aspects?
   return (
     <div>
       <Switch>
+        <Route path="/newsfeed">
+          <NewsFeed />
+        </Route>
           <Route path="/portfolio" component= {
             () => <Portfolio  coins = {coins} myPortfolio={myPortfolio}/>
           }>
           </Route>
           <Route path="/:id" component= {
-            () => <CardDetail coins={coins}/>
+            () => <DetailsContainer coins={coins} handleClick={addToPortfolio}/>
           }>
           </Route>
           <Route path="/" component= {
